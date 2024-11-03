@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8aa62e433c7279041aad7bc25f4225f9
+guid: 6770c16d3a408134b83c38d17f8fcc5b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -136,64 +136,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Get hit_0
+      name: Explode_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 43
-        width: 35
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 150
+        y: 0
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5400833, y: 0.51607347}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9276fb123facf24bafc05cad4824d8d
-      internalID: 1532827353
+      spriteID: c1b29a90982ca6a46aaf92e5f475b41f
+      internalID: -612472556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Get hit_1
+      name: Explode_1
       rect:
         serializedVersion: 2
-        x: 193
-        y: 43
-        width: 33
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 202
+        y: 1
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4949895, y: 0.46763933}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29cb9954ce2bf7d48af2861243963dd3
-      internalID: 1257966362
+      spriteID: 7b031bbf239e6194fa7df1914f2709fb
+      internalID: 542799862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Get hit_2
+      name: Explode_3
       rect:
         serializedVersion: 2
-        x: 335
-        y: 43
-        width: 34
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 252
+        y: 0
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.51503146, y: 0.4960318}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 903f19e60d508c84b8da02a1628138d0
-      internalID: -371859004
+      spriteID: 4b7bd7d1b4b95b44983368900bbe45bd
+      internalID: 1268771346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explode_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5200417, y: 0.4659693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5629085092e1c4993f13f78b7bedab
+      internalID: 242130571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explode_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5100208, y: 0.4960318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0d1f40bf73c5c44b67c41a9396d7c9
+      internalID: 1040583951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explode_
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 49
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5055516}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8afa40fa5bd24af4f9b84abe291e409a
+      internalID: 227596764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explode_6
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f500d556291cf448d8179666f2f170
+      internalID: 1859084144
       vertices: []
       indices: 
       edges: []
@@ -209,9 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Get hit_0: 1532827353
-      Get hit_1: 1257966362
-      Get hit_2: -371859004
+      Explode_: 227596764
+      Explode_0: -612472556
+      Explode_1: 542799862
+      Explode_3: 1268771346
+      Explode_4: 242130571
+      Explode_5: 1040583951
+      Explode_6: 1859084144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

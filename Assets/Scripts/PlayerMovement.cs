@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D playerRb;
-
-    [SerializeField] private float JumpForce;
+    [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
     [SerializeField] private float input;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] bool onGround = false;
     [SerializeField] bool walk = false;
+    private BoxCollider2D boxCollider;
+    [SerializeField] private LayerMask groundLayer;
 
 
     private Animator playerAnimator;
@@ -22,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
 
@@ -39,35 +38,30 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX= false;
         }
 
-        playerAnimator.SetBool("walk", walk);
+        playerAnimator.SetBool("walk", input != 0);
 
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
-        {
-            walk = true;
-        }
-
+        onGround = CheckIsGrounded();
         playerAnimator.SetBool("isGrounded", onGround);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (onGround == true || walk == true)
-            {
-                rb.AddForce(Vector2.up * JumpForce);
-                onGround = false;
-                walk = false;
-            }
+            onGround = false;
+            rb.AddForce(Vector2.up * jumpForce);
+            playerAnimator.SetBool("isGrounded", onGround);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   
+
+    private bool CheckIsGrounded()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            if (onGround == false)
-            {
-                onGround = true;
-            }
-        }
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
+        return raycastHit.collider != null;
+    }
+
+    public bool CanAttack()
+    {
+        return input == 0 && CheckIsGrounded();
     }
 }
 
