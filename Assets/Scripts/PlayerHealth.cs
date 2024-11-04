@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float startingHealth;
+    private float currentHealth;
+
+    private void Awake()
     {
-        
+        currentHealth = startingHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage1)
     {
-        
+        currentHealth = Mathf.Clamp(currentHealth - damage1, 0, startingHealth);
+        if (currentHealth > 0)
+        {
+
+        }
     }
 }

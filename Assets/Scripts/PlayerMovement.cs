@@ -1,14 +1,13 @@
+using System.Transactions;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
-    [SerializeField] private float input;
-    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] bool onGround = false;
-    [SerializeField] bool walk = false;
     private BoxCollider2D boxCollider;
+    private float horizontalInput;
     [SerializeField] private LayerMask groundLayer;
 
 
@@ -26,19 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        input = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(input * speed, rb.velocity.y);
+        horizontalInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
 
-        if(input < 0)
+        if(horizontalInput > 0.01f)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(3.610736f, 3.610736f, 3.610736f);
         }
-        else if(input > 0)
+        else if(horizontalInput < -0.01f)
         {
-            spriteRenderer.flipX= false;
+            transform.localScale = new Vector3(-3.610736f, 3.610736f, 3.610736f);
         }
 
-        playerAnimator.SetBool("walk", input != 0);
+        playerAnimator.SetBool("walk", horizontalInput != 0);
 
         onGround = CheckIsGrounded();
         playerAnimator.SetBool("isGrounded", onGround);
@@ -61,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanAttack()
     {
-        return input == 0 && CheckIsGrounded();
+        return horizontalInput == 0 && CheckIsGrounded();
     }
 }
 
